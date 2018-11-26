@@ -1,0 +1,32 @@
+
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<Pane fx:controller="sample.GameController"
+      xmlns:fx="http://javafx.com/fxml" >
+    <HBox fx:id="hboxTop">
+        <VBox fx:id="gameLevel">
+            <HBox>
+                <Label text="lv 1" fx:id="lv1"/>
+                <Label text="lv 2" fx:id="lv2"/>
+                <Label text="lv 3" fx:id="lv3"/>
+            </HBox>
+            <ProgressBar minWidth="400" fx:id="progressGameLevel"/>
+        </VBox>
+        <VBox fx:id="gameScore">
+            <HBox>
+                <Label text="Score: " fx:id="lb_name_score"/>
+                <Label text="0" fx:id="lb_score"/>
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <StackPane fx:id="flowPane" maxWidth="300">
+        <Label fx:id="lb_levelup" minWidth="NaN" text="Level up"/>
+        <Label fx:id="lb_die" alignment="CENTER" minWidth="NaN" text="You Die !"/>
+        <Label fx:id="lb_plusScore" alignment="CENTER" minWidth="NaN" text=" + 1"/>
+    </StackPane>
+</Pane>

@@ -1,0 +1,76 @@
+@font-face{
+    font-family: 'Brieston';
+    src: url('source/font/Brieston.ttf');
+}
+
+#lb_levelup, #lb_die, #lb_plusScore{
+    -fx-font-size: 100pt;
+    -fx-alignment: center;
+    -fx-font-family: Brieston;
+    -fx-font-weight: bold;
+    -fx-text-fill: #80d4ff;
+    -fx-padding: 100 0 0 0;
+}
+
+#lb_die{
+    -fx-text-fill: red;
+}
+
+
+.label .text{
+    -fx-stroke: black;
+    -fx-stroke-width: 2px;
+}
+
+#flowPane{
+    -fx-alignment: top-center;
+}
+#root{
+    -fx-background-image: url("source/background_level1.jpg");
+    -fx-background-position: center center;
+}
+
+#hboxTop{
+    -fx-background-color: #409E8C;
+}
+#lv1, #lv2, #lv3{
+    -fx-text-fill: white;
+    -fx-padding: 0 100 0 0;
+}
+#gameLevel{
+    -fx-alignment: center;
+}
+#progressGameLevel{
+    -fx-accent: #E4F221;
+    -fx-text-box-border: black;
+    -fx-control-inner-background: black;
+}
+
+#gameScore{
+    -fx-padding: 10 0 0 400;
+}
+#lb_name_score{
+    -fx-font-size: 50;
+    -fx-padding: 10 30 10 10;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-family: Brieston;
+}
+
+#lb_score{
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-font-size: 50;
+    -fx-min-width: 100;
+    -fx-padding: 10;
+    -fx-text-fill: white;
+    -fx-content-display: center;
+    -fx-background-color: black;
+    -fx-background-radius: 10;
+    -fx-font-family: Brieston;
+}
+#lb_plusScore{
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-family: Brieston;
+}
