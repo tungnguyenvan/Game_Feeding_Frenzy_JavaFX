@@ -181,7 +181,6 @@ public class GameObject {
      * @return
      */
     public int getY(){
-        System.out.println((int) node.getTranslateY());
         return (int) node.getTranslateY();
     }
 

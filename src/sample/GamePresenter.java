@@ -77,10 +77,10 @@ public class GamePresenter implements GameContract.Presenter{
     }
 
     private boolean isCollision(GameObject gamePlay, GameObject gameCollision){
-        return gamePlay.getNode().getBoundsInParent().getMaxX() >= gameCollision.getNode().getBoundsInParent().getMinX() &&
-                gamePlay.getNode().getBoundsInParent().getMinX() <= gameCollision.getNode().getBoundsInParent().getMaxX() &&
-                gamePlay.getNode().getBoundsInParent().getMaxY() >= gameCollision.getNode().getBoundsInParent().getMinY() &&
-                gamePlay.getNode().getBoundsInParent().getMinY() <= gameCollision.getNode().getBoundsInParent().getMaxY();
+        return gamePlay.getNode().getBoundsInParent().getMaxX() >= gameCollision.getNode().getBoundsInParent().getMinX() + 5 &&
+                gamePlay.getNode().getBoundsInParent().getMinX() <= gameCollision.getNode().getBoundsInParent().getMaxX() - 5 &&
+                gamePlay.getNode().getBoundsInParent().getMaxY() >= gameCollision.getNode().getBoundsInParent().getMinY() + 10 &&
+                gamePlay.getNode().getBoundsInParent().getMinY() <= gameCollision.getNode().getBoundsInParent().getMaxY() - 10;
     }
 
     private void handleCollisionSuccess(GameObject gameObject){
