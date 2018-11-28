@@ -11,7 +11,7 @@ import sample.model.GameData;
 
 public class GameController implements GameContract.Controller{
     public HBox hboxTop;
-    public Label lb_score;
+    public Label lb_heart;
     public ProgressBar progressGameLevel;
     public Label lb_die;
     public Label lb_plusScore;
@@ -24,7 +24,7 @@ public class GameController implements GameContract.Controller{
         Screen screen = Screen.getPrimary();
         flowPane.setMinWidth(screen.getVisualBounds().getWidth());
         flowPane.setMinHeight(screen.getVisualBounds().getHeight());
-
+        lb_heart.setText(GameData.getHeart() + "X");
         hboxTop.setMinWidth(screen.getVisualBounds().getWidth());
         hboxTop.setMinHeight(100);
         lb_levelup.setVisible(false);
@@ -45,9 +45,7 @@ public class GameController implements GameContract.Controller{
     }
 
     public void updateScore(){
-        lb_score.setText(String.valueOf(GameData.getPoint()));
-        if (GameData.getPoint() > 0)
-            progressGameLevel.setProgress(GameData.getPoint() / GameData.MAX);
+
     }
 
     @Override
@@ -55,16 +53,17 @@ public class GameController implements GameContract.Controller{
         Platform.runLater(() -> {
             lb_die.setVisible(true);
             mGameAnimation.showLabel(lb_die);
+            lb_heart.setText(GameData.getHeart() + "X");
         });
     }
 
     @Override
-    public void showLabelPlusScore(double fromX, double fromY) {
+    public void showLabelPlusScore() {
         Platform.runLater(() -> {
-            lb_plusScore.setVisible(true);
-            lb_plusScore.setTranslateX(fromX);
-            lb_plusScore.setTranslateY(fromY);
-            mGameAnimation.translateScore(lb_plusScore,fromX, fromX, lb_score.getTranslateX(), lb_score.getTranslateY());
+            lb_plusScore.setText(String.valueOf(GameData.getPoint()));
+            mGameAnimation.translateScore(lb_plusScore);
+            if (GameData.getPoint() > 0)
+                progressGameLevel.setProgress(GameData.getPoint() / GameData.MAX);
         });
     }
 }

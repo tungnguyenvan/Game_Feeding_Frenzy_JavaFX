@@ -145,16 +145,14 @@ public class GameAnimation {
         fadeTransition.setOnFinished(event -> node.setVisible(false));
     }
 
-    public void translateScore(Node node,double fromX, double fromY, double toX, double toY){
-        node.setVisible(true);
-        TranslateTransition translateTransition = new TranslateTransition(Duration.millis(1000), node);
-        translateTransition.setFromX(fromX);
-        translateTransition.setFromY(fromY);
-        translateTransition.setToX(toX);
-        translateTransition.setToY(toY);
-        translateTransition.setAutoReverse(false);
-        translateTransition.setCycleCount(1);
-        translateTransition.play();
-        translateTransition.setOnFinished(event -> hindLabel(node));
+    public void translateScore(Node node){
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(400), node);
+        scaleTransition.setFromZ(50);
+        scaleTransition.setFromX(50);
+        scaleTransition.setFromY(50);
+        scaleTransition.setToX(1);
+        scaleTransition.setToY(1);
+        scaleTransition.setToZ(1);
+        scaleTransition.play();
     }
 }

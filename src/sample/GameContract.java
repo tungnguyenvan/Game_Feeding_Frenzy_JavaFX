@@ -91,9 +91,7 @@ public interface GameContract {
 
         /**
          * Show lable +1 score
-         * @param x
-         * @param y
          */
-        void showLabelPlusScore(double fromX, double fromY);
+        void showLabelPlusScore();
     }
 }

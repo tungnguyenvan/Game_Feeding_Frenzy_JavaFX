@@ -18,8 +18,7 @@
         </VBox>
         <VBox fx:id="gameScore">
             <HBox>
-                <Label text="Score: " fx:id="lb_name_score"/>
-                <Label text="0" fx:id="lb_score"/>
+                <Label text="3X" fx:id="lb_heart"/>
             </HBox>
         </VBox>
     </HBox>
@@ -27,6 +26,6 @@
     <StackPane fx:id="flowPane" maxWidth="300">
         <Label fx:id="lb_levelup" minWidth="NaN" text="Level up"/>
         <Label fx:id="lb_die" alignment="CENTER" minWidth="NaN" text="You Die !"/>
-        <Label fx:id="lb_plusScore" alignment="CENTER" minWidth="NaN" text=" + 1"/>
+        <Label fx:id="lb_plusScore" alignment="CENTER" minWidth="NaN" text="0"/>
     </StackPane>
 </Pane>

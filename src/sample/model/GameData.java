@@ -25,7 +25,7 @@ public class GameData {
     }
 
     public static void subHeart(){
-        level -= 1;
+        heart -= 1;
     }
     public static int getHeart() {
         return heart;
