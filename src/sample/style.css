@@ -57,7 +57,7 @@
     -fx-font-family: Brieston;
 }
 
-#lb_score{
+#lb_heart{
     -fx-font-weight: bold;
     -fx-alignment: center;
     -fx-font-size: 50;
@@ -70,6 +70,7 @@
     -fx-font-family: Brieston;
 }
 #lb_plusScore{
+    -fx-font-size: 150;
     -fx-font-weight: bold;
     -fx-text-fill: white;
     -fx-font-family: Brieston;

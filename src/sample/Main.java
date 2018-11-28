@@ -149,8 +149,8 @@ public class Main extends Application implements GameContract.View {
      */
     private void pushLevel(int scale){
         mGameController.showLevelUp();
-        mGamePlay.levelUp(scale);
         GameData.pushLevel();
+        mGamePlay.levelUp(scale);
     }
 
     public static void main(String[] args) {
@@ -167,7 +167,7 @@ public class Main extends Application implements GameContract.View {
     public void collisionSuccess(GameObject mGameObject) {
         removeNode(mGameObject);
         GameData.pushPoint();
-        mGameController.showLabelPlusScore(mGamePlay.getNode().getTranslateX(), mGamePlay.getNode().getTranslateY());
+        mGameController.showLabelPlusScore();
         if (GameData.getPoint() == GameData.pointLevelSmall
                 || GameData.getPoint() == GameData.pointLevelNormal) pushLevel(GameData.getScaleLevel());
     }
@@ -175,6 +175,7 @@ public class Main extends Application implements GameContract.View {
     @Override
     public void collisionFail() {
         disableEvent();
+        GameData.subHeart();
         mGamePlay.getNode().setVisible(false);
         mGameController.showDie();
         mGamePlay.setDie();
