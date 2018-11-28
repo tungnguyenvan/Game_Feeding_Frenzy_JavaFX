@@ -63,7 +63,7 @@ public class GameController implements GameContract.Controller{
             lb_plusScore.setText(String.valueOf(GameData.getPoint()));
             mGameAnimation.translateScore(lb_plusScore);
             if (GameData.getPoint() > 0)
-                progressGameLevel.setProgress(GameData.getPoint() / GameData.MAX);
+                progressGameLevel.setProgress(GameData.getPoint() / GameData.maxPoint);
         });
     }
 }

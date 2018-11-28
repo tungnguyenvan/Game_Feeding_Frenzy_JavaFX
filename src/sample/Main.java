@@ -9,14 +9,18 @@ import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import sample.model.GameData;
 import sample.model.GameObject;
+import sample.model.GameSound;
 import sample.model.Sponges;
 import sample.utils.GameContrants;
 
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -153,6 +157,10 @@ public class Main extends Application implements GameContract.View {
         mGamePlay.levelUp(scale);
     }
 
+    private void finishGame(){
+
+    }
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -168,6 +176,7 @@ public class Main extends Application implements GameContract.View {
         removeNode(mGameObject);
         GameData.pushPoint();
         mGameController.showLabelPlusScore();
+        if (GameData.getPoint() == GameData.maxPoint) finishGame();
         if (GameData.getPoint() == GameData.pointLevelSmall
                 || GameData.getPoint() == GameData.pointLevelNormal) pushLevel(GameData.getScaleLevel());
     }

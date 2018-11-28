@@ -4,7 +4,7 @@ public class GameData {
     private static int point = 0;
     private static int level = 1;
     private static int heart = 3;
-    public static int MAX = 30;
+    public static int maxPoint = 30;
 
     public static int pointLevelSmall = 10;
     public static int pointLevelNormal = 20;
@@ -36,9 +36,9 @@ public class GameData {
      * @return
      */
     public static int getScaleLevel(){
-        int scale = GameObject.SCALE_SMALL;
+        int scale = GameObject.SCALE_LEVEL_SMALL;
         if (getPoint() == pointLevelSmall) scale = GameObject.SCALE_LEVEL_NORMAL;
-        else if (getPoint() == pointLevelNormal) scale = GameObject.SCALE_BIG;
+        else if (getPoint() == pointLevelNormal) scale = GameObject.SCALE_LEVEL_BIG;
         return scale;
     }
 }
