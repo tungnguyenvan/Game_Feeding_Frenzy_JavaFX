@@ -3,6 +3,7 @@ package sample;
 import javafx.scene.layout.Pane;
 import sample.model.GameObject;
 
+import java.awt.*;
 import java.util.List;
 
 public interface GameContract {
@@ -10,7 +11,7 @@ public interface GameContract {
         /**
          * init event onMouseMoved
          */
-        void initEvent();
+        void initEvent() throws AWTException;
 
         /**
          * Xóa object để giảm lag

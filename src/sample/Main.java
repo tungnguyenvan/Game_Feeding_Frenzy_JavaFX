@@ -1,5 +1,6 @@
 package sample;
 
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -37,7 +38,6 @@ public class Main extends Application implements GameContract.View {
     private GameObject mGamePlay = new GameObject();
     private AnimationTimer mTimer;
     private long time = 0;
-    private Sponges mSponges = new Sponges();
 
     private List<GameObject> barriers = new ArrayList<>();
 
@@ -45,6 +45,7 @@ public class Main extends Application implements GameContract.View {
     public void start(Stage primaryStage) throws Exception{
         initView(primaryStage);
         initObject();
+        initEvent();
         mPresenter = new GamePresenter(this);
         mTimer = new AnimationTimer() {
             @Override
@@ -105,7 +106,7 @@ public class Main extends Application implements GameContract.View {
      * init event khi chuột di chuyển thì thực hiện hành động cho các chạy theo
      */
     @Override
-    public void initEvent() {
+    public void initEvent() throws AWTException {
         scene.setOnMouseMoved(event -> {
             if (event.getSceneX() < mPosstionX)
                 mGamePlay.rotateNodeToRight(false);
@@ -114,14 +115,7 @@ public class Main extends Application implements GameContract.View {
             mGamePlay.setPossition(event.getSceneX(), event.getSceneY());
             mPosstionX = event.getSceneX() + 1;
         });
-        Platform.runLater(() -> {
-            try {
-                Robot robot = new Robot();
-                robot.mouseMove(mGamePlay.getX(), mGamePlay.getY());
-            } catch (AWTException e) {
-                e.printStackTrace();
-            }
-        });
+//        new Robot().mouseMove(500, 500);
     }
 
     /**
@@ -173,6 +167,7 @@ public class Main extends Application implements GameContract.View {
 
     @Override
     public void collisionSuccess(GameObject mGameObject) {
+        GameSound.biteSound();
         removeNode(mGameObject);
         GameData.pushPoint();
         mGameController.showLabelPlusScore();
@@ -183,7 +178,8 @@ public class Main extends Application implements GameContract.View {
 
     @Override
     public void collisionFail() {
-        disableEvent();
+        GameSound.biteSound();
+        GameSound.bubbleSound();
         GameData.subHeart();
         mGamePlay.getNode().setVisible(false);
         mGameController.showDie();

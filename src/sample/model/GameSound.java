@@ -6,15 +6,32 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 
+
 public class GameSound {
-    public static final String BITE_SOUND = "source/sound/bite.mp3";
-    public static final String BUBBLE_SOUND = "sample/source/sound/Bubbles.mp3";
+    private static final String BITE_SOUND = "src/sample/source/sound/bite.mp3";
+    private static final String BUBBLE_SOUND = "src/sample/source/sound/Bubbles.mp3";
     private static Media mMedia;
     private static MediaPlayer mMediaPlayer;
 
-    public static void biteSound(String url){
-        mMedia  = new Media(new File(url).toString());
-        mMediaPlayer = new MediaPlayer(mMedia);
+    private static void play(){
+        mMediaPlayer.setAutoPlay(true);
+        mMediaPlayer.setVolume(1);
         mMediaPlayer.play();
+    }
+
+    public static void biteSound(){
+        mMedia = new Media(new File(BITE_SOUND).toURI().toString());
+        mMediaPlayer = new MediaPlayer(mMedia);
+        play();
+    }
+
+    public static void bubbleSound(){
+        mMedia = new Media(new File(BUBBLE_SOUND).toURI().toString());
+        mMediaPlayer = new MediaPlayer(mMedia);
+        play();
+    }
+
+    public static void gameWaitingSound(){
+
     }
 }
