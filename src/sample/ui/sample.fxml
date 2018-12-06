@@ -5,7 +5,7 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.StackPane?>
-<Pane fx:controller="sample.GameController"
+<Pane fx:controller="sample.controller.GameController"
       xmlns:fx="http://javafx.com/fxml" >
     <HBox fx:id="hboxTop">
         <VBox fx:id="gameLevel">

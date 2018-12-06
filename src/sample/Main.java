@@ -9,11 +9,13 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import sample.controller.GamePlayController;
 import sample.model.GameData;
 import sample.model.GameObject;
 import sample.model.GameSound;
@@ -28,25 +30,36 @@ import java.util.List;
 
 
 public class Main extends Application implements GameContract.View {
+    private Stage primaryStage;
     private Pane root;
     private Scene scene;
     private GameContract.Presenter mPresenter;
     private GameContract.Controller mGameController;
+    private SplashContract.Controller mSplashController;
 
     private double mPosstionX = 0;
 
     private GameObject mGamePlay = new GameObject();
     private AnimationTimer mTimer;
     private long time = 0;
+    private GameSound mGameSound = new GameSound();
 
     private List<GameObject> barriers = new ArrayList<>();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        initView(primaryStage);
-        initObject();
-        initEvent();
+        this.primaryStage = primaryStage;
         mPresenter = new GamePresenter(this);
+        GamePlayController.startSplah(primaryStage, this.getClass(), mSplashController, this);
+    }
+
+    private void checkCollision(){
+        for (GameObject mGameObject : barriers){
+            mPresenter.checkCollision(mGamePlay, mGameObject);
+        }
+    }
+
+    private void onUpdate(){
         mTimer = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -62,38 +75,6 @@ public class Main extends Application implements GameContract.View {
         mTimer.start();
     }
 
-    private void checkCollision(){
-        for (GameObject mGameObject : barriers){
-            mPresenter.checkCollision(mGamePlay, mGameObject);
-        }
-    }
-
-    /**
-     * Tạo mới View và chưa làm gì
-     * @param primaryStage
-     */
-    private void initView(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ui/sample.fxml"));
-        Parent parent = fxmlLoader.load();
-        root = new Pane();
-        root.setId("root");
-        mGameController = fxmlLoader.getController();
-        root.getChildren().add(parent);
-        primaryStage.setTitle("Feeding Frenzy");
-        scene = new Scene(root);
-        scene.getStylesheets().add("sample/style.css");
-        scene.setCursor(Cursor.NONE);
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
-        primaryStage.setX(bounds.getMinX());
-        primaryStage.setY(bounds.getMinY());
-        primaryStage.setWidth(bounds.getWidth());
-        GameContrants.WIDTH = bounds.getWidth();
-        GameContrants.HEIGHT = bounds.getHeight();
-        primaryStage.setHeight(bounds.getHeight());
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
 
     /**
      * truyền các object như mGamePlay và các con cá khác vào
@@ -115,15 +96,8 @@ public class Main extends Application implements GameContract.View {
             mGamePlay.setPossition(event.getSceneX(), event.getSceneY());
             mPosstionX = event.getSceneX() + 1;
         });
-//        new Robot().mouseMove(500, 500);
     }
 
-    /**
-     * disable event khi game play die
-     */
-    private void disableEvent(){
-        scene.setOnMouseMoved(null);
-    }
 
 
     /**
@@ -167,7 +141,7 @@ public class Main extends Application implements GameContract.View {
 
     @Override
     public void collisionSuccess(GameObject mGameObject) {
-        GameSound.biteSound();
+        mGameSound.biteSound();
         removeNode(mGameObject);
         GameData.pushPoint();
         mGameController.showLabelPlusScore();
@@ -178,12 +152,27 @@ public class Main extends Application implements GameContract.View {
 
     @Override
     public void collisionFail() {
-        GameSound.biteSound();
-        GameSound.bubbleSound();
+        mGameSound.biteSound();
+        mGameSound.bubbleSound();
         GameData.subHeart();
         mGamePlay.getNode().setVisible(false);
         mGameController.showDie();
         mGamePlay.setDie();
         mPresenter.retryGamePlay(mGamePlay, this);
+    }
+
+    @Override
+    public void startGame() throws Exception {
+        GamePlayController.initViewGamePlay(primaryStage, this.getClass(), root, scene, mGameController, this);
+    }
+
+    @Override
+    public void startGameSuccess(Scene scene, Pane root, GameContract.Controller mController) throws Exception {
+        this.scene = scene;
+        this.root = root;
+        this.mGameController = mController;
+        initObject();
+        initEvent();
+        onUpdate();
     }
 }
