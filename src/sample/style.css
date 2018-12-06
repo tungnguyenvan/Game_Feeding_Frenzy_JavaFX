@@ -75,3 +75,18 @@
     -fx-text-fill: white;
     -fx-font-family: Brieston;
 }
+#img_start, #lb_start{
+    -fx-padding: 10px;
+    -fx-font-size: 25px;
+    -fx-alignment: center;
+    -fx-font-family: Brieston;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, BLACK, 10, 0, 0, 0);
+}
+
+#img_start : hover, #lb_start : hover{
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-scale-z: 1.1;
+    -fx-effect: dropshadow(three-pass-box, BLACK, 20, 0, 0, 0);
+}

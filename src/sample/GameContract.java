@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import sample.model.GameObject;
 
@@ -29,6 +30,20 @@ public interface GameContract {
          * xử lí va chạm thất bại, bị cá lớn nuốt
          */
         void collisionFail();
+
+        /**
+         * starting Game
+         * @throws Exception
+         */
+        void startGame() throws Exception;
+
+        /**
+         * Start Game Play Success
+         * @param scene
+         * @param root
+         * @param mController
+         */
+        void startGameSuccess(Scene scene, Pane root, GameContract.Controller mController) throws Exception;
     }
 
     interface Presenter{
