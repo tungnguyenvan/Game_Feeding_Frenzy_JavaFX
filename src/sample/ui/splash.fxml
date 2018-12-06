@@ -4,19 +4,29 @@
 
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <BorderPane fx:id="root" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="sample.controller.SplashController"
             prefHeight="400.0" prefWidth="600.0">
     <center>
-        <ImageView>
+        <VBox alignment="CENTER" spacing="50">
+        <ImageView fx:id="img_logo">
             <image>
                 <Image url="@../source/image/logo_panel.PNG"/>
             </image>
         </ImageView>
+        <!--<Button text="Play" onMouseClicked="#playGame" fx:id="btn_play" alignment="CENTER" minHeight="80" minWidth="170"/>-->
+            <StackPane>
+                <VBox fx:id="img_start" onMouseClicked="#playGame">
+                    <ImageView>
+                        <image>
+                            <Image url="@../source/image/bg_plank.png"/>
+                        </image>
+                    </ImageView>
+                </VBox>
+                <Label text="Start" fx:id="lb_start" onMouseClicked="#playGame"/>
+            </StackPane>
+        </VBox>
     </center>
-    <top>
-        <Button text="Play" onMouseClicked="#playGame"/>
-    </top>
 </BorderPane>

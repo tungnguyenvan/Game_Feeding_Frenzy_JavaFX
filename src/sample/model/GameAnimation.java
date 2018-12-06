@@ -147,4 +147,20 @@ public class GameAnimation {
         scaleTransition.setToZ(1);
         scaleTransition.play();
     }
+
+    public void translateLogoSplash(Node node){
+        TranslateTransition translateTransition = new TranslateTransition(Duration.millis(3000), node);
+        translateTransition.setToY(50);
+        translateTransition.setAutoReverse(true);
+        translateTransition.setCycleCount(TranslateTransition.INDEFINITE);
+
+        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(3000), node);
+        scaleTransition.setToX(1.15);
+        scaleTransition.setToY(1.15);
+        scaleTransition.setAutoReverse(true);
+        scaleTransition.setCycleCount(ScaleTransition.INDEFINITE);
+
+        translateTransition.play();
+        scaleTransition.play();
+    }
 }

@@ -50,6 +50,7 @@ public class Main extends Application implements GameContract.View {
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
         mPresenter = new GamePresenter(this);
+        mGameSound.gameWaitingSound();
         GamePlayController.startSplah(primaryStage, this.getClass(), mSplashController, this);
     }
 
@@ -80,6 +81,7 @@ public class Main extends Application implements GameContract.View {
      * truyền các object như mGamePlay và các con cá khác vào
      */
     private void initObject(){
+        mGameSound.bubbleSound();
         root.getChildren().add(mGamePlay.gamePlay(this));
     }
 
