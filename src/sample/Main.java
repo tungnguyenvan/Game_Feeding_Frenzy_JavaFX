@@ -1,26 +1,22 @@
 package sample;
 
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import sample.model.GameData;
 import sample.model.GameObject;
 import sample.model.GameSound;
-import sample.model.Sponges;
 import sample.utils.GameContrants;
 
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +33,6 @@ public class Main extends Application implements GameContract.View {
     private GameObject mGamePlay = new GameObject();
     private AnimationTimer mTimer;
     private long time = 0;
-    private Sponges mSponges = new Sponges();
 
     private List<GameObject> barriers = new ArrayList<>();
 
@@ -45,11 +40,14 @@ public class Main extends Application implements GameContract.View {
     public void start(Stage primaryStage) throws Exception{
         initView(primaryStage);
         initObject();
+        initEvent();
         mPresenter = new GamePresenter(this);
         mTimer = new AnimationTimer() {
             @Override
             public void handle(long now) {
                 mGameController.updateScore();
+                mGameController.updateHeart();
+                mGameController.showProgressGameLevel();
                 checkCollision();
                 if (time == 100){
                     updateGame();
@@ -65,6 +63,7 @@ public class Main extends Application implements GameContract.View {
         for (GameObject mGameObject : barriers){
             mPresenter.checkCollision(mGamePlay, mGameObject);
         }
+
     }
 
     /**
@@ -105,7 +104,7 @@ public class Main extends Application implements GameContract.View {
      * init event khi chuột di chuyển thì thực hiện hành động cho các chạy theo
      */
     @Override
-    public void initEvent() {
+    public void initEvent() throws AWTException {
         scene.setOnMouseMoved(event -> {
             if (event.getSceneX() < mPosstionX)
                 mGamePlay.rotateNodeToRight(false);
@@ -114,14 +113,7 @@ public class Main extends Application implements GameContract.View {
             mGamePlay.setPossition(event.getSceneX(), event.getSceneY());
             mPosstionX = event.getSceneX() + 1;
         });
-        Platform.runLater(() -> {
-            try {
-                Robot robot = new Robot();
-                robot.mouseMove(mGamePlay.getX(), mGamePlay.getY());
-            } catch (AWTException e) {
-                e.printStackTrace();
-            }
-        });
+//        new Robot().mouseMove(500, 500);
     }
 
     /**
@@ -158,8 +150,10 @@ public class Main extends Application implements GameContract.View {
     }
 
     private void finishGame(){
-
-    }
+        mGameController.showGameWin();
+        mTimer.stop();
+        scene.setCursor(Cursor.OPEN_HAND);
+    } 
 
     public static void main(String[] args) {
         launch(args);
@@ -173,6 +167,7 @@ public class Main extends Application implements GameContract.View {
 
     @Override
     public void collisionSuccess(GameObject mGameObject) {
+        GameSound.biteSound();
         removeNode(mGameObject);
         GameData.pushPoint();
         mGameController.showLabelPlusScore();
@@ -183,11 +178,20 @@ public class Main extends Application implements GameContract.View {
 
     @Override
     public void collisionFail() {
-        disableEvent();
+        GameSound.biteSound();
         GameData.subHeart();
         mGamePlay.getNode().setVisible(false);
-        mGameController.showDie();
         mGamePlay.setDie();
-        mPresenter.retryGamePlay(mGamePlay, this);
+
+        if (GameData.getHeart() == 0) { // hết mạng
+            mGameController.showGameOver();
+            mTimer.stop();
+            scene.setCursor(Cursor.OPEN_HAND);
+        } else {
+            GameSound.bubbleSound();
+            mPresenter.retryGamePlay(mGamePlay, this);
+        }
     }
+
+
 }

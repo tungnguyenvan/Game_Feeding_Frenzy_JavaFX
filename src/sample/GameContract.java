@@ -3,6 +3,7 @@ package sample;
 import javafx.scene.layout.Pane;
 import sample.model.GameObject;
 
+import java.awt.*;
 import java.util.List;
 
 public interface GameContract {
@@ -10,7 +11,7 @@ public interface GameContract {
         /**
          * init event onMouseMoved
          */
-        void initEvent();
+        void initEvent() throws AWTException;
 
         /**
          * Xóa object để giảm lag
@@ -28,6 +29,7 @@ public interface GameContract {
          * xử lí va chạm thất bại, bị cá lớn nuốt
          */
         void collisionFail();
+
     }
 
     interface Presenter{
@@ -66,6 +68,7 @@ public interface GameContract {
          * @param gameCollision
          */
         void checkCollision(GameObject gamePlay, GameObject gameCollision);
+
     }
 
     interface Controller{
@@ -80,15 +83,30 @@ public interface GameContract {
         void hindLevelUp();
 
         /**
+         * game over
+         */
+        void showGameOver();
+
+        /**
+         * Win
+         */
+        void showGameWin();
+        /**
          * update điểm hiển thị trên màn hình
          */
         void updateScore();
-
+        /**
+         * update mạng hiển thị
+         */
+        void updateHeart();
         /**
          * cho label die hien thi
          */
         void showDie();
-
+        /**
+         *
+         */
+        void showProgressGameLevel();
         /**
          * Show lable +1 score
          */

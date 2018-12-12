@@ -105,15 +105,7 @@ public class GameAnimation {
         fadeTransition.play();
         scaleTransition.play();
         translateTransition.play();
-        translateTransition.setOnFinished((event) -> {
-            try {
-                Thread.sleep(300);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }finally {
-                hindLabel(node);
-            }
-        });
+        translateTransition.setOnFinished(event -> hindLabel(node));
     }
 
     /**
@@ -129,7 +121,7 @@ public class GameAnimation {
         translateTransition.setAutoReverse(false);
         translateTransition.setCycleCount(1);
         translateTransition.play();
-        translateTransition.setOnFinished(event -> mView.initEvent());
+//        translateTransition.setOnFinished(event -> mView.initEvent());
     }
 
     /**
