@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/sample/GameContract$Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/sample/GameContract$Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/sample/GameContract$Presenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/sample/GameContract$Presenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/sample/GameContract$View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/sample/GameContract$View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/sample/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/sample/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/sample/GamePresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/sample/GamePresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/sample/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/sample/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/sample/model/GameData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/sample/model/GameData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/sample/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/sample/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/sample/ui/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/sample/ui/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GameContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GameContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GamePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GamePresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/model/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/model/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ui/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ui/sample.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -145,11 +126,6 @@
                 <element signature="method#retryGamePlay#0;class#GamePresenter#0" />
                 <element signature="method#removeGameObject#0;class#GamePresenter#0" />
                 <element signature="method#removeGamePlay#0;class#GamePresenter#0" />
-                <element signature="method#isCollision#0;class#GamePresenter#0" />
-                <element signature="e#3561#3562#0" expanded="true" />
-                <element signature="e#3611#3612#0" expanded="true" />
-                <element signature="e#3671#3672#0" expanded="true" />
-                <element signature="e#3733#3734#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,8 +134,22 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="152" column="38" lean-forward="true" selection-start-line="152" selection-start-column="38" selection-end-line="152" selection-end-column="38" />
+            <state relative-caret-position="16">
+              <caret line="169" column="29" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
+              <folding>
+                <element signature="e#1206#1642#0" expanded="true" />
+                <element signature="e#1641#1642#0" expanded="true" />
+                <element signature="e#3016#3017#0" expanded="true" />
+                <element signature="e#3080#3081#0" expanded="true" />
+                <element signature="e#3758#3759#0" expanded="true" />
+                <element signature="e#3801#3802#0" expanded="true" />
+                <element signature="e#3896#3897#0" expanded="true" />
+                <element signature="e#3925#3926#0" expanded="true" />
+                <element signature="e#3994#3995#0" expanded="true" />
+                <element signature="e#4052#4053#0" expanded="true" />
+                <element signature="e#4424#4425#0" expanded="true" />
+                <element signature="e#4452#4453#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,8 +157,8 @@
       <file leaf-file-name="GameContract.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/GameContract.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
+            <state relative-caret-position="232">
+              <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -176,12 +166,8 @@
       <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="289">
               <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-              <folding>
-                <element signature="e#1791#1792#0" expanded="true" />
-                <element signature="e#1851#1852#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -190,7 +176,7 @@
         <entry file="file://$PROJECT_DIR$/src/sample/model/GameData.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+              <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -221,7 +207,7 @@
       <find>lb</find>
       <find>root.getch</find>
       <find>root.getchildren().add</find>
-      <find>mGameAnimation = new GameAnimation();</find>
+      <find />
       <find>gameplay.get</find>
       <find>sys</find>
       <find>type</find>
@@ -265,9 +251,9 @@
         <option value="$PROJECT_DIR$/src/sample/style.css" />
         <option value="$PROJECT_DIR$/src/sample/GamePresenter.java" />
         <option value="$PROJECT_DIR$/src/sample/model/GameData.java" />
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/GameContract.java" />
         <option value="$PROJECT_DIR$/src/sample/GameController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Main.java" />
       </list>
     </option>
   </component>
@@ -489,18 +475,38 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.398773" />
-      <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3297546" />
-      <window_info anchor="bottom" id="Changes" order="10" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Problems" order="9" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36472347" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.3297546" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info id="Image Layers" order="4" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.398773" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="UI Designer" order="5" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3297546" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21303074" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3297546" />
+      <window_info anchor="right" id="JetGradle" order="3" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Designer" order="3" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Application Servers" order="7" />
@@ -557,6 +563,38 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="737">
+          <caret line="186" column="27" selection-start-line="186" selection-start-column="27" selection-end-line="186" selection-end-column="27" />
+          <folding>
+            <element signature="e#1206#1642#0" expanded="true" />
+            <element signature="e#1641#1642#0" expanded="true" />
+            <element signature="e#3016#3017#0" expanded="true" />
+            <element signature="e#3080#3081#0" expanded="true" />
+            <element signature="e#3758#3759#0" expanded="true" />
+            <element signature="e#3801#3802#0" expanded="true" />
+            <element signature="e#3896#3897#0" expanded="true" />
+            <element signature="e#3925#3926#0" expanded="true" />
+            <element signature="e#3994#3995#0" expanded="true" />
+            <element signature="e#4052#4053#0" expanded="true" />
+            <element signature="e#4424#4425#0" expanded="true" />
+            <element signature="e#4452#4453#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/GameAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="107" selection-start-line="107" selection-start-column="2" selection-end-line="115" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getDuration#0;class#GameAnimation#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/GamePresenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1309">
@@ -566,11 +604,6 @@
             <element signature="method#retryGamePlay#0;class#GamePresenter#0" />
             <element signature="method#removeGameObject#0;class#GamePresenter#0" />
             <element signature="method#removeGamePlay#0;class#GamePresenter#0" />
-            <element signature="method#isCollision#0;class#GamePresenter#0" />
-            <element signature="e#3561#3562#0" expanded="true" />
-            <element signature="e#3611#3612#0" expanded="true" />
-            <element signature="e#3671#3672#0" expanded="true" />
-            <element signature="e#3733#3734#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -579,10 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="65" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
-          <folding>
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#1851#1852#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -609,11 +638,6 @@
             <element signature="method#retryGamePlay#0;class#GamePresenter#0" />
             <element signature="method#removeGameObject#0;class#GamePresenter#0" />
             <element signature="method#removeGamePlay#0;class#GamePresenter#0" />
-            <element signature="method#isCollision#0;class#GamePresenter#0" />
-            <element signature="e#3561#3562#0" expanded="true" />
-            <element signature="e#3611#3612#0" expanded="true" />
-            <element signature="e#3671#3672#0" expanded="true" />
-            <element signature="e#3733#3734#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -648,11 +672,6 @@
             <element signature="method#retryGamePlay#0;class#GamePresenter#0" />
             <element signature="method#removeGameObject#0;class#GamePresenter#0" />
             <element signature="method#removeGamePlay#0;class#GamePresenter#0" />
-            <element signature="method#isCollision#0;class#GamePresenter#0" />
-            <element signature="e#3561#3562#0" expanded="true" />
-            <element signature="e#3611#3612#0" expanded="true" />
-            <element signature="e#3671#3672#0" expanded="true" />
-            <element signature="e#3733#3734#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -701,11 +720,6 @@
             <element signature="method#retryGamePlay#0;class#GamePresenter#0" />
             <element signature="method#removeGameObject#0;class#GamePresenter#0" />
             <element signature="method#removeGamePlay#0;class#GamePresenter#0" />
-            <element signature="method#isCollision#0;class#GamePresenter#0" />
-            <element signature="e#3561#3562#0" expanded="true" />
-            <element signature="e#3611#3612#0" expanded="true" />
-            <element signature="e#3671#3672#0" expanded="true" />
-            <element signature="e#3733#3734#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -775,11 +789,6 @@
             <element signature="method#retryGamePlay#0;class#GamePresenter#0" />
             <element signature="method#removeGameObject#0;class#GamePresenter#0" />
             <element signature="method#removeGamePlay#0;class#GamePresenter#0" />
-            <element signature="method#isCollision#0;class#GamePresenter#0" />
-            <element signature="e#3561#3562#0" expanded="true" />
-            <element signature="e#3611#3612#0" expanded="true" />
-            <element signature="e#3671#3672#0" expanded="true" />
-            <element signature="e#3733#3734#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -890,7 +899,7 @@
     <entry file="file://$PROJECT_DIR$/src/sample/model/GameData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -903,11 +912,6 @@
             <element signature="method#retryGamePlay#0;class#GamePresenter#0" />
             <element signature="method#removeGameObject#0;class#GamePresenter#0" />
             <element signature="method#removeGamePlay#0;class#GamePresenter#0" />
-            <element signature="method#isCollision#0;class#GamePresenter#0" />
-            <element signature="e#3561#3562#0" expanded="true" />
-            <element signature="e#3611#3612#0" expanded="true" />
-            <element signature="e#3671#3672#0" expanded="true" />
-            <element signature="e#3733#3734#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -921,26 +925,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="289">
           <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding>
-            <element signature="e#1791#1792#0" expanded="true" />
-            <element signature="e#1851#1852#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/GameContract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
+        <state relative-caret-position="232">
+          <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="152" column="38" lean-forward="true" selection-start-line="152" selection-start-column="38" selection-end-line="152" selection-end-column="38" />
+        <state relative-caret-position="16">
+          <caret line="169" column="29" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
+          <folding>
+            <element signature="e#1206#1642#0" expanded="true" />
+            <element signature="e#1641#1642#0" expanded="true" />
+            <element signature="e#3016#3017#0" expanded="true" />
+            <element signature="e#3080#3081#0" expanded="true" />
+            <element signature="e#3758#3759#0" expanded="true" />
+            <element signature="e#3801#3802#0" expanded="true" />
+            <element signature="e#3896#3897#0" expanded="true" />
+            <element signature="e#3925#3926#0" expanded="true" />
+            <element signature="e#3994#3995#0" expanded="true" />
+            <element signature="e#4052#4053#0" expanded="true" />
+            <element signature="e#4424#4425#0" expanded="true" />
+            <element signature="e#4452#4453#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
