@@ -221,7 +221,7 @@
       <find>lb</find>
       <find>root.getch</find>
       <find>root.getchildren().add</find>
-      <find />
+      <find>mGameAnimation = new GameAnimation();</find>
       <find>gameplay.get</find>
       <find>sys</find>
       <find>type</find>

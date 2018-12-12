@@ -153,7 +153,7 @@ public class Main extends Application implements GameContract.View {
         mGameController.showGameWin();
         mTimer.stop();
         scene.setCursor(Cursor.OPEN_HAND);
-    }
+    } 
 
     public static void main(String[] args) {
         launch(args);
