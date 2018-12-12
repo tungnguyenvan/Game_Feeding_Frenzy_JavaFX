@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.ImageView?>
 <Pane fx:controller="sample.GameController"
       xmlns:fx="http://javafx.com/fxml" >
     <HBox fx:id="hboxTop">
@@ -16,9 +17,11 @@
             </HBox>
             <ProgressBar minWidth="400" fx:id="progressGameLevel"/>
         </VBox>
-        <VBox fx:id="gameScore">
+
+        <VBox fx:id="gameHeart">
             <HBox>
-                <Label text="3X" fx:id="lb_heart"/>
+                <ImageView fx:id="img_heart" fitWidth="64" fitHeight="64"/>
+                <Label text="X3" fx:id="lb_heart"/>
             </HBox>
         </VBox>
     </HBox>

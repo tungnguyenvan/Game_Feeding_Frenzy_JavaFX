@@ -76,6 +76,7 @@ public class GamePresenter implements GameContract.Presenter{
         }
     }
 
+
     private boolean isCollision(GameObject gamePlay, GameObject gameCollision){
         return gamePlay.getNode().getBoundsInParent().getMaxX() >= gameCollision.getNode().getBoundsInParent().getMinX() + 5 &&
                 gamePlay.getNode().getBoundsInParent().getMinX() <= gameCollision.getNode().getBoundsInParent().getMaxX() - 5 &&
@@ -90,4 +91,5 @@ public class GamePresenter implements GameContract.Presenter{
     private void handleCollisionFail(GameObject gamePlay){
         if (gamePlay.isSuvive()) mView.collisionFail();
     }
+
 }

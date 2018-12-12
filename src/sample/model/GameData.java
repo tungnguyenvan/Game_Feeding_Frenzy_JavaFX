@@ -1,24 +1,25 @@
 package sample.model;
 
 public class GameData {
-    private static int point = 0;
+    private static double point = 0;
     private static int level = 1;
-    private static int heart = 3;
-    public static int maxPoint = 30;
+    private static int heart = 2;
+    public static double maxPoint = 10;
 
-    public static int pointLevelSmall = 10;
-    public static int pointLevelNormal = 20;
-    public static int pointLevelBig = 30;
+    public static int pointLevelSmall = 5;
+    public static int pointLevelNormal = 10;
+    public static int pointLevelBig = 15;
 
     public static void pushPoint(){
         point += 1;
     }
-    public static int getPoint(){
+    public static double getPoint(){
         return point;
     }
 
     public static void pushLevel(){
         level += 1;
+        heart += 1;
     }
     public static int getLevel(){
         return level;
