@@ -1,11 +1,9 @@
 package sample.model;
 
 
-import javafx.application.Platform;
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
 
 import java.io.File;
 
@@ -14,20 +12,19 @@ public class GameSound {
     private static final String BITE_SOUND = "src/sample/source/sound/bite.mp3";
     private static final String BUBBLE_SOUND = "src/sample/source/sound/Bubbles.mp3";
     private static final String WAITING_SOUND = "src/sample/source/sound/waiting.mp3";
+    private static final String WIN_SOUND = "src/sample/source/sound/sound_win.mp3";
+    private static final String OVER_SOUND = "src/sample/source/sound/sound_over.mp3";
+
     private Media mMedia;
     private MediaPlayer mMediaPlayer;
 
 
     public void biteSound(){
-        mMedia = new Media(new File(BITE_SOUND).toURI().toString());
-        mMediaPlayer = new MediaPlayer(mMedia);
-        mMediaPlayer.play();
+        playSount(BITE_SOUND);
     }
 
     public void bubbleSound(){
-        mMedia = new Media(new File(BUBBLE_SOUND).toURI().toString());
-        mMediaPlayer = new MediaPlayer(mMedia);
-        mMediaPlayer.play();
+        playSount(BUBBLE_SOUND);
     }
 
     public void gameWaitingSound(){
@@ -37,11 +34,17 @@ public class GameSound {
         mMediaPlayer.setOnReady(() -> mMediaPlayer.play());
     }
 
-    public static void gamePauseSound(){
-
+    public void gameWin(){
+        playSount(WIN_SOUND);
     }
 
-    public static void gamePlaySound(){
+    public void gameOver(){
+        playSount(OVER_SOUND);
+    }
 
+    private void playSount(String path){
+        mMedia = new Media(new File(path).toURI().toString());
+        mMediaPlayer = new MediaPlayer(mMedia);
+        mMediaPlayer.play();
     }
 }

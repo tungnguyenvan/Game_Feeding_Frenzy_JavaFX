@@ -79,7 +79,7 @@ public class GameAnimation {
      * hiệu ứng chữ Levelup
      * @param node
      */
-    public void showLabel(Node node){
+    public void showLabel(Node node, boolean autoHidden){
         FadeTransition fadeTransition = new FadeTransition(Duration.millis(1500), node);
         fadeTransition.setFromValue(0);
         fadeTransition.setToValue(1.0);
@@ -105,7 +105,7 @@ public class GameAnimation {
         fadeTransition.play();
         scaleTransition.play();
         translateTransition.play();
-        translateTransition.setOnFinished(event -> hindLabel(node));
+        if (autoHidden) translateTransition.setOnFinished(event -> hindLabel(node));
     }
 
     /**

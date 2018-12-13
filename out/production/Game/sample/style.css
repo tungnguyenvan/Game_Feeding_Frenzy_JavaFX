@@ -3,7 +3,7 @@
     src: url('source/font/Brieston.ttf');
 }
 
-#lb_levelup, #lb_die, #lb_plusScore{
+#lb_levelup, #lb_die, #lb_plusScore, #lb_gameover, #lb_finish{
     -fx-font-size: 100pt;
     -fx-alignment: center;
     -fx-font-family: Brieston;
@@ -75,7 +75,7 @@
     -fx-text-fill: white;
     -fx-font-family: Brieston;
 }
-#img_start, #lb_start{
+#img_start, #img_try, #img_quit, #img_try{
     -fx-padding: 10px;
     -fx-font-size: 25px;
     -fx-alignment: center;
@@ -84,9 +84,14 @@
     -fx-effect: dropshadow(three-pass-box, BLACK, 10, 0, 0, 0);
 }
 
-#img_start : hover, #lb_start : hover{
+#img_start : hover, #img_try:hover, #img_quit:hover, #lb_start : hover, #lb_try:hover, #lb_quit:hover{
     -fx-scale-x: 1.1;
     -fx-scale-y: 1.1;
     -fx-scale-z: 1.1;
     -fx-effect: dropshadow(three-pass-box, BLACK, 20, 0, 0, 0);
+}
+
+#root_trygame{
+    -fx-padding: 400 0 0 0;
+    -fx-background-color: #00000000;
 }
