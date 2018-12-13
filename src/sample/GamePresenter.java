@@ -88,6 +88,12 @@ public class GamePresenter implements GameContract.Presenter{
     }
 
     private void handleCollisionFail(GameObject gamePlay){
-        if (gamePlay.isSuvive()) mView.collisionFail();
+        if (gamePlay.isSuvive()) {
+            try {
+                mView.collisionFail();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="root_trygame"
+            fx:controller="sample.controller.TryGameController"
+            prefHeight="400.0" prefWidth="600.0">
+    <center>
+        <VBox alignment="CENTER">
+            <ImageView fx:id="img_logo">
+                <image>
+                    <Image url="@../source/image/logo_panel.PNG"/>
+                </image>
+            </ImageView>
+
+            <StackPane >
+                <VBox fx:id="img_try" onMouseClicked="#tryGame" >
+                    <ImageView>
+                        <image>
+                            <Image url="@../source/image/bg_plank.png"/>
+                        </image>
+                    </ImageView>
+                </VBox>
+                <Label text="Try it" fx:id="lb_try" onMouseClicked="#tryGame"/>
+            </StackPane>
+
+            <StackPane >
+                <VBox fx:id="img_quit"  onMouseClicked="#quitGame">
+                    <ImageView>
+                        <image>
+                            <Image url="@../source/image/bg_plank.png"/>
+                        </image>
+                    </ImageView>
+                </VBox>
+                <Label text="Quit" fx:id="lb_quit" onMouseClicked="#quitGame"/>
+            </StackPane>
+        </VBox>
+    </center>
+</BorderPane>

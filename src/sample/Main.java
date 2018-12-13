@@ -16,6 +16,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import sample.controller.GamePlayController;
+import sample.controller.TryGameController;
 import sample.model.GameData;
 import sample.model.GameObject;
 import sample.model.GameSound;
@@ -66,7 +67,7 @@ public class Main extends Application implements GameContract.View {
             public void handle(long now) {
                 mGameController.updateScore();
                 checkCollision();
-                if (time == 100){
+                if (time == 80){
                     updateGame();
                     time = 0;
                 }
@@ -127,8 +128,10 @@ public class Main extends Application implements GameContract.View {
         mGamePlay.levelUp(scale);
     }
 
-    private void finishGame(){
-
+    private void finishGame() throws Exception{
+        mGameSound.gameWin();
+        mGamePlay.getNode().setVisible(false);
+        mGameController.showFinish(primaryStage, this.getClass(), this);
     }
 
     public static void main(String[] args) {
@@ -147,20 +150,29 @@ public class Main extends Application implements GameContract.View {
         removeNode(mGameObject);
         GameData.pushPoint();
         mGameController.showLabelPlusScore();
-        if (GameData.getPoint() == GameData.maxPoint) finishGame();
+        if (GameData.getPoint() == GameData.maxPoint) {
+            try {
+                finishGame();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         if (GameData.getPoint() == GameData.pointLevelSmall
                 || GameData.getPoint() == GameData.pointLevelNormal) pushLevel(GameData.getScaleLevel());
     }
 
     @Override
-    public void collisionFail() {
+    public void collisionFail() throws Exception{
         mGameSound.biteSound();
         mGameSound.bubbleSound();
         GameData.subHeart();
         mGamePlay.getNode().setVisible(false);
-        mGameController.showDie();
-        mGamePlay.setDie();
-        mPresenter.retryGamePlay(mGamePlay, this);
+        if (GameData.getHeart() == 0) gameOver();
+        else {
+            mGamePlay.setDie();
+            mPresenter.retryGamePlay(mGamePlay, this);
+            mGameController.showDie();
+        }
     }
 
     @Override
@@ -172,9 +184,22 @@ public class Main extends Application implements GameContract.View {
     public void startGameSuccess(Scene scene, Pane root, GameContract.Controller mController) throws Exception {
         this.scene = scene;
         this.root = root;
+        this.mGamePlay.setSurvive();
         this.mGameController = mController;
+        barriers = new ArrayList<>();
         initObject();
         initEvent();
         onUpdate();
+    }
+
+    @Override
+    public void gameOver() throws Exception{
+        mGamePlay.setDie();
+        mGamePlay.getNode().setVisible(false);
+        mTimer.stop();
+        root.getChildren().remove(mGamePlay);
+        mGameSound.gameOver();
+        GamePlayController.initGameOver(primaryStage, this.getClass(), this);
+        mGameController.showGameOver();
     }
 }

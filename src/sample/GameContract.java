@@ -2,6 +2,7 @@ package sample;
 
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import sample.model.GameObject;
 
 import java.awt.*;
@@ -29,7 +30,7 @@ public interface GameContract {
         /**
          * xử lí va chạm thất bại, bị cá lớn nuốt
          */
-        void collisionFail();
+        void collisionFail() throws Exception;
 
         /**
          * starting Game
@@ -44,6 +45,11 @@ public interface GameContract {
          * @param mController
          */
         void startGameSuccess(Scene scene, Pane root, GameContract.Controller mController) throws Exception;
+
+        /**
+         * game over
+         */
+        void gameOver() throws Exception;
     }
 
     interface Presenter{
@@ -109,5 +115,15 @@ public interface GameContract {
          * Show lable +1 score
          */
         void showLabelPlusScore();
+
+        /**
+         * show lable game over
+         */
+        void showGameOver();
+
+        /**
+         * finish Game
+         */
+        void showFinish(Stage primaryStage, Class clazz, GameContract.View mView) throws Exception;
     }
 }

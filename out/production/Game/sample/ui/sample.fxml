@@ -27,5 +27,7 @@
         <Label fx:id="lb_levelup" minWidth="NaN" text="Level up"/>
         <Label fx:id="lb_die" alignment="CENTER" minWidth="NaN" text="You Die !"/>
         <Label fx:id="lb_plusScore" alignment="CENTER" minWidth="NaN" text="0"/>
+        <Label fx:id="lb_gameover" alignment="CENTER" minHeight="NaN" text="Game Over"/>
+        <Label fx:id="lb_finish" alignment="CENTER" minHeight="NaN" text="Finish"/>
     </StackPane>
 </Pane>
